@@ -1,0 +1,57 @@
+body{
+    background-color : #ffffb3;
+    background-repeat: repeat-x;
+    background-image : url(http://fanaru.com/black/image/128600-black-black-town.jpg);
+}
+#header{
+    font-size: 75px;
+    font-family: fantasy;
+    text-shadow: 3px 3px gray;
+    color : whitesmoke;
+    line-height : 0.9;
+}
+/*#quiz{
+    background-color: #b3b3b3;
+    border: 2px solid;
+    border-radius: 5px;
+    margin: 50px;
+}*/
+#question{
+    font-size: 50px;
+    font-family: Arial;
+    padding-left : 50px;
+    font-weight: bold; 
+    color : yellow;
+    text-shadow: 3px 3px gray;
+}
+#ans1,#ans2,#ans3,#ans4{
+    font-size: 40px;
+    font-family: Arial;
+    text-align: center;
+    font-weight: bold; 
+    color : black;
+    background-color: #999999;
+    margin : 5%;
+}
+#tt{
+    color : black;
+    font-family: Arial;
+    font-size: 23px;
+    background-color: #ccccff;
+    border : 3px solid grey;
+
+   
+}
+#hint,#main,#reset{
+    font-size: 30px;
+    font-family: Arial;
+    text-align: center;
+    font-weight: bold; 
+    color : black;
+    background-color: #ffff1a;
+    margin : 5%;
+    border-radius: 75px;
+}
+thead,tr{
+    border : 3px solid grey;
+}
