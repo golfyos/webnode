@@ -17,15 +17,16 @@ body{
     margin: 50px;
 }*/
 #question{
-    font-size: 50px;
+    font-size: 40px;
     font-family: Arial;
     padding-left : 50px;
     font-weight: bold; 
-    color : yellow;
+    color : lawngreen;
     text-shadow: 3px 3px gray;
+    text-align: center;
 }
 #ans1,#ans2,#ans3,#ans4{
-    font-size: 40px;
+    font-size: 25px;
     font-family: Arial;
     text-align: center;
     font-weight: bold; 
