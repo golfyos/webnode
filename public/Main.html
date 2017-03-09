@@ -22,8 +22,10 @@ and open the template in the editor.
         </div>
         <div id="btn">
             <div class="col-xs-3"></div>
-            <a href="web-app.html"><button class="col-xs-2" type="button" id="new">New Game</button></a>
-            <a href="About.html"><button  class="col-xs-2" type="button" id="about" >About</button></a>
+            <form action="about" method="POST">
+                <button class="col-xs-2" type="button" id="new" name="menu" value="new">New Game</button>
+                <button  class="col-xs-2" type="button" id="about" name="menu" value="about">About</button>
+            </form>
         </div>
     </body>
 </html>
