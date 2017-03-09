@@ -1,4 +1,9 @@
 {
+    "numberOfQuestion" : 8,
 
-    
+    "question" : ["what is a cat?","what is a dog?","what is a ggwp","what is a test","what is a cat?","what is a dog?","what is a ggwp","what is a test"],
+    "ans1": ["cat is an animal","dog is an animal","ggwp is an animal","test is an animal","cat is an animal","dog is an animal","ggwp is an animal","test is an animal"],
+    "ans2": ["cat is a dog","dog is a cat","ggwp is a cat","test is a cat","cat is a dog","dog is a cat","ggwp is a cat","test is a cat"],
+    "ans3": ["cat is a bird","dog is a bird","ggwp is a bird","test is a bird","cat is a bird","dog is a bird","ggwp is a bird","test is a bird"],
+    "ans4": ["cat is a cat","dog is a dog","ggwp is a ggwp","test is a test","cat is a cat","dog is a dog","ggwp is a ggwp","test is a test"]
 }
