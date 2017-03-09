@@ -95,11 +95,13 @@
         var json,positionTrue,idTrue;
         var size=0;
         function newgame(){
+            
              $.getJSON("../json/question.json", function(obj) {
                 json = obj;
                 var rand;
                 var check = true;
                 for(var i=0;i<8;i++){
+                    
                     rand = Math.floor(Math.random()*json["numberOfQuestion"]);
                     check = true;
                     for(var j=0;j<gotRand.length;j++){
@@ -119,15 +121,18 @@
         var num = ["one","two","three","four","five","six","seven","eight"];
         function getQuestion(){
             var current = gotRand[size];
-            $("#qq").text(json["question"][current]);
+            
+            var data = json["groupQuestion"][current];
+            
+            $("#qq").text(data["question"]);
             positionTrue = Math.floor(Math.random()*4)+1;
             idTrue = "ans"+positionTrue;
-            var trueAns = json["ans4"][current];
+            var trueAns = data["ans4"];
             $("#ans"+positionTrue).html(trueAns);
             var j=1;
             for(var i=1;i<=4;i++){       
                 if(i!=positionTrue){
-                    $("#ans"+i).html(json["ans"+j][current]);
+                    $("#ans"+i).html(data["ans"+j]);
                     j++;
                 }   
             }
@@ -139,7 +144,6 @@
             $("#"+num[size-1]).css("background-color","#28FF28");
         }
         
-
         function reset(){
             for(var i=1;i<=8;i++)
                 $("#"+num[i]).css("background-color","#ccccff");

@@ -1,9 +1,66 @@
 {
-    "numberOfQuestion" : 8,
-
-    "question" : ["what is a cat?","what is a dog?","what is a ggwp","what is a test","what is a cat?","what is a dog?","what is a ggwp","what is a test"],
-    "ans1": ["cat is an animal","dog is an animal","ggwp is an animal","test is an animal","cat is an animal","dog is an animal","ggwp is an animal","test is an animal"],
-    "ans2": ["cat is a dog","dog is a cat","ggwp is a cat","test is a cat","cat is a dog","dog is a cat","ggwp is a cat","test is a cat"],
-    "ans3": ["cat is a bird","dog is a bird","ggwp is a bird","test is a bird","cat is a bird","dog is a bird","ggwp is a bird","test is a bird"],
-    "ans4": ["cat is a cat","dog is a dog","ggwp is a ggwp","test is a test","cat is a cat","dog is a dog","ggwp is a ggwp","test is a test"]
+    "numberOfQuestion":8,
+    "groupQuestion" : [
+        {
+            "question":"what is a cat?",
+            "ans1":"cat is an animal",
+            "ans2":"cat is a dog",
+            "ans3":"cat is a bird",
+            "ans4":"cat is a cat"
+        },
+        {
+            "question":"what is a dog?",
+            "ans1":"dog is an animal",
+            "ans2":"dog is a cat",
+            "ans3":"dog is a bird",
+            "ans4":"dog is a dog"
+        },
+        {
+            "question":"what is a ggwp?",
+            "ans1":"ggwp is an animal",
+            "ans2":"ggwp is a dog",
+            "ans3":"ggwp is a bird",
+            "ans4":"ggwp is a ggwp"
+        },
+        {
+            "question":"what is a test?",
+            "ans1":"test is an animal",
+            "ans2":"test is a dog",
+            "ans3":"test is a bird",
+            "ans4":"test is a test"
+        },
+        {
+            "question":"what is a cat?",
+            "ans1":"cat is an animal",
+            "ans2":"cat is a dog",
+            "ans3":"cat is a bird",
+            "ans4":"cat is a cat"
+        },
+        {
+            "question":"what is a dog?",
+            "ans1":"dog is an animal",
+            "ans2":"dog is a cat",
+            "ans3":"dog is a bird",
+            "ans4":"dog is a dog"
+        },
+        {
+            "question":"what is a ggwp?",
+            "ans1":"ggwp is an animal",
+            "ans2":"ggwp is a dog",
+            "ans3":"ggwp is a bird",
+            "ans4":"ggwp is a ggwp"
+        },
+        {
+            "question":"what is a test?",
+            "ans1":"test is an animal",
+            "ans2":"test is a dog",
+            "ans3":"test is a bird",
+            "ans4":"test is a test"
+        }
+    ]
 }
+
+
+
+
+
