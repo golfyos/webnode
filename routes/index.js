@@ -14,9 +14,9 @@ router.post('/',function(req, res){
     console.log("post");
     //var name = req.body.playerName;
     var obj,str;
-    fs.readFile(path.resolve(__dirname +'/../public/json/player.json'), 'utf8', function (err, data) {
+    fs.readFile(path.resolve(__dirname +'/../public/json/player.json'), 'utf8', function (err, dat) {
         if (err) throw err;
-        obj = JSON.parse(data);
+        obj = JSON.parse(dat);
         obj.winner.push(req.body.playerName);
         obj.numberOfWinner = obj.numberOfWinner+1;
         str = JSON.stringify(obj)
@@ -40,6 +40,15 @@ router.post('/play',function(req,res){
   }
 });
 
+router.post('/player',function(req,res){
+    
+    fs.readFile(path.resolve(__dirname +'/../public/json/player.json'),'utf8',function(err,dat){
+        if(err) throw err;
+        var obj = JSON.parse(dat);
+        res.render("index.ejs",{info:obj})
+    });
+    
+});
 
 router.all('*',function(req,res){
     res.sendFile(path.resolve(__dirname+"/../public/Main.html"));

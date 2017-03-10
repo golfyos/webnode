@@ -2,182 +2,38 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-        <link href="web-css.css" type="text/css" rel="stylesheet" />
+       
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Quiz Game</title>
+        <style>
+            body{
+                background-color : #ffffb3;
+                background-repeat: repeat-x;
+                background-image : url(http://fanaru.com/black/image/128600-black-black-town.jpg);
+                color:white;
+            }
+            td{ text-align:center; }
+        </style>
     </head>
     <body>
-        <div class="row">
-            <div class="col-xs-9"> 
-                <div class="col-xs-1"></div>
-                <button  class="col-xs-2" type="button" id="hint" >Hint</button>
-                <a href="/"><button  class="col-xs-2" type="button" id="main" >Menu</button></a>
-                <button  class="col-xs-2" type="button" id="reset"  >Reset</button>
-                <div class="col-xs-8"></div>
-               
-            </div>
-            <div class="col-xs-1"></div>
-            <div id="header" class="col-xs-2">Quiz Game</div>
-        </div>
-        <div class="row">
-            <div id="temp" class="col-xs-9"><p id="lose">You Lose! <br> Reset game!</p></div>
-            <div id="quiz" class="col-xs-9">
-                <div id="question">
-                    <p id="qq"> </p>
-                </div>     
-                <button  class="col-xs-4 ans" type="button"  id="ans1" >answer 1</button>
-                <div class="col-xs-1"></div>
-                <button  class="col-xs-4 ans" type="button" id="ans2" >answer 2</button>
-                <button  class="col-xs-4 ans" type="button" id="ans3" >answer 3</button>
-                <div class="col-xs-1"></div>
-                <button  class="col-xs-4 ans" type="button" id="ans4" >answer 4</button>
-            </div>
-            <div class="col-xs-1"></div>
-            <div class="col-xs-2">
-                <table id="tt" class="table table">
-                    <thead>
-                        <tr>
-                            <th style="font-weight: bold; font-size: 30px;  border: 2px solid;">Score</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td id="eight">1,000,000 $</td>
-                        </tr>
-                        <tr>
-                            <td id="seven">500,000 $</td>
-                        </tr>
-                        <tr>
-                            <td id="six">250,000 $</td>
-                        </tr>
-                        <tr>
-                            <td id="five">100,000 $</td>
-                        </tr>
-                        <tr>
-                            <td id="four">50,000 $</td>
-                        </tr>
-                        <tr>
-                            <td id="three">20,000 $</td>
-                        </tr>
-                        <tr>
-                            <td id="two">10,000 $</td>
-                        </tr>
-                         <tr>
-                            <td id="one">5,000 $</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div> 
+        <p> Player who won Quiz Game </p>
+        <table>
+            <tr> 
+                <th> --- </th>
+                <th> The Winner </th>
+            </tr>
+            <% for(var i=0,j=1;i<info.numberOfWinner;i++,j++){ %>
+            <tr>
+                <td> <%= j %></td>
+                <td> <%= info.winner[i] %></td>
+            </tr>
+            <% } %>
+        </table>
+
+        <a href="/"> <button> BACK </button> </a>
     </body>
-
-    <script>
-      
-        $(document).ready(function() {
-            $("#temp").hide();
-            newgame();
-        }),
-        $(".ans").click(function(event) {
-            var id = event.target.id;
-            if(id==idTrue){
-                alert("Correct ! go next");
-                getMoney();
-                getQuestion();
-            }
-            else{
-                alert("Wrong ! You lose");
-                for(var i=0;i<size;i++)
-                    $("#"+num[i]).css("background-color","red");
-                //$('.ans').prop('disabled', true);
-                $("#temp").show();
-                $("#quiz").hide();
-            }
-        }),
-        $("#reset").click(function(){
-            reset();
-            newgame();
-        }) 
-
-        var gotRand = []; 
-        var json,positionTrue,idTrue;
-        var size=0; 
-        
-         
-        function newgame(){
-             //$.getJSON("../json/question.json", function(obj) {
-                //json = obj;
-                
-                //alert(testing+1);
-                var numQuest = <%- JSON.stringify(data.numberOfQuestion) %>; 
-                
-                //alert(numQuest);
-                var rand;
-                var check = true;
-                //var gotRand = []; 
-                //var size=0;
-                for(var i=0;i<8;i++){
-                    rand = Math.floor(Math.random()*numQuest);
-                    //alert(rand);
-                    check = true;
-                    for(var j=0;j<gotRand.length;j++){
-                        if(rand==gotRand[j]){
-                            i--;
-                            check = false;
-                            break;
-                        }
-                    }
-                    if(check)
-                        gotRand.push(rand);
-                } 
-                
-
-                <% 
-                var ran
-
-                getQuestion(); 
-             //})
-        } 
-
-        var num = ["one","two","three","four","five","six","seven","eight"];
-        function getQuestion(){
-            var current = gotRand[size]; 
-            //var data = json["groupQuestion"][current];
-            //alert("gg");
-            var dataQuest =  <%- JSON.stringify(data.groupQuestion[0]) %> ;
-            //alert("wp");
-            //alert(dataQuest);
-            $("#qq").text(dataQuest["question"]);
-            positionTrue = Math.floor(Math.random()*4)+1;
-            idTrue = "ans"+positionTrue;
-            var trueAns = dataQuest["ans4"];
-            $("#ans"+positionTrue).html(trueAns);
-            var j=1;
-            for(var i=1;i<=4;i++){       
-                if(i!=positionTrue){
-                    $("#ans"+i).html(dataQuest["ans"+j]);
-                    j++;
-                }   
-            }
-            $("#"+num[size]).css("background-color","yellow");
-            size++;
-        }
-
-        function getMoney(){
-            $("#"+num[size-1]).css("background-color","#28FF28");
-        }
-        
-        function reset(){
-            for(var i=1;i<=8;i++)
-                $("#"+num[i]).css("background-color","#ccccff");
-            gotRand = [];
-            size = 0;
-            $("#temp").hide();
-            $("#quiz").show();
-        } %>
-        
-    </script>
 </html>
