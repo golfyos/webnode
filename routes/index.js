@@ -12,6 +12,18 @@ router.get('/',function(req, res){
 
 router.post('/',function(req, res){
     console.log("post");
+    //var name = req.body.playerName;
+    var obj,str;
+    fs.readFile(path.resolve(__dirname +'/../public/json/player.json'), 'utf8', function (err, data) {
+        if (err) throw err;
+        obj = JSON.parse(data);
+        obj.winner.push(req.body.playerName);
+        obj.numberOfWinner = obj.numberOfWinner+1;
+        str = JSON.stringify(obj)
+        fs.writeFile(path.resolve(__dirname +'/../public/json/player.json'), str, function (err) {
+            if (err) return console.log(err);
+        });
+    });
     res.sendFile(path.resolve(__dirname + "/../public/Main.html"));
 });
 
