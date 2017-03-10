@@ -1,0 +1,80 @@
+{
+    "numberOfQuestion":10,
+    "groupQuestion" : [
+        {
+            "question":"what is a cat?",
+            "ans1":"cat is an animal",
+            "ans2":"cat is a dog",
+            "ans3":"cat is a bird",
+            "ans4":"cat is a cat"
+        },
+        {
+            "question":"what is a dog?",
+            "ans1":"dog is an animal",
+            "ans2":"dog is a cat",
+            "ans3":"dog is a bird",
+            "ans4":"dog is a dog"
+        },
+        {
+            "question":"what is a ggwp?",
+            "ans1":"ggwp is an animal",
+            "ans2":"ggwp is a dog",
+            "ans3":"ggwp is a bird",
+            "ans4":"ggwp is a ggwp"
+        },
+        {
+            "question":"what is a test?",
+            "ans1":"test is an animal",
+            "ans2":"test is a dog",
+            "ans3":"test is a bird",
+            "ans4":"test is a test"
+        },
+        {
+            "question":"what is a cat?",
+            "ans1":"cat is an animal",
+            "ans2":"cat is a dog",
+            "ans3":"cat is a bird",
+            "ans4":"cat is a cat"
+        },
+        {
+            "question":"what is a dog?",
+            "ans1":"dog is an animal",
+            "ans2":"dog is a cat",
+            "ans3":"dog is a bird",
+            "ans4":"dog is a dog"
+        },
+        {
+            "question":"what is a ggwp?",
+            "ans1":"ggwp is an animal",
+            "ans2":"ggwp is a dog",
+            "ans3":"ggwp is a bird",
+            "ans4":"ggwp is a ggwp"
+        },
+        {
+            "question":"what is a test?",
+            "ans1":"test is an animal",
+            "ans2":"test is a dog",
+            "ans3":"test is a bird",
+            "ans4":"test is a test"
+        },
+        {
+            "question":"ม้าลายมีลายสีอะไร?",
+            "ans1":"สีเขียว",
+            "ans2":"สีม่วง",
+            "ans3":"สีเหลือง",
+            "ans4":"สีขาว"
+        },
+        {
+            "question":"สีแดงผสมกับสีเขียวจะได้สีอะไร?",
+            "ans1":"สีน้ำเงิน",
+            "ans2":"สีฟ้า",
+            "ans3":"สีม่วง",
+            "ans4":"สีเหลือง"
+        }
+    ]
+}
+
+
+
+
+
