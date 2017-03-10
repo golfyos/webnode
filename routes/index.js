@@ -22,6 +22,7 @@ router.post('/play',function(req,res){
   }
 });
 
+
 router.all('*',function(req,res){
     res.sendFile(path.resolve(__dirname+"/../public/Main.html"));
 });
