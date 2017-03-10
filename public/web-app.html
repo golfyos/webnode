@@ -24,6 +24,7 @@
             <div id="header" class="col-xs-2">Quiz Game</div>
         </div>
         <div class="row">
+            <div id="temp" class="col-xs-9"><p id="lose">You Lose! <br> Reset game!</p></div>
             <div id="quiz" class="col-xs-9">
                 <div id="question">
                     <p id="qq"> </p>
@@ -76,6 +77,7 @@
 
     <script>
         $(document).ready(function() {
+            $("#temp").hide();
             newgame();
         }),
         $(".ans").click(function(event) {
@@ -84,6 +86,14 @@
                 alert("Correct ! go next");
                 getMoney();
                 getQuestion();
+            }
+            else{
+                alert("Wrong ! You lose");
+                for(var i=0;i<size;i++)
+                    $("#"+num[i]).css("background-color","red");
+                //$('.ans').prop('disabled', true);
+                $("#temp").show();
+                $("#quiz").hide();
             }
         }),
         $("#reset").click(function(){
@@ -94,14 +104,13 @@
         var gotRand = [];
         var json,positionTrue,idTrue;
         var size=0;
+        
         function newgame(){
-            
              $.getJSON("../json/question.json", function(obj) {
                 json = obj;
                 var rand;
                 var check = true;
                 for(var i=0;i<8;i++){
-                    
                     rand = Math.floor(Math.random()*json["numberOfQuestion"]);
                     check = true;
                     for(var j=0;j<gotRand.length;j++){
@@ -149,6 +158,8 @@
                 $("#"+num[i]).css("background-color","#ccccff");
             gotRand = [];
             size = 0;
+            $("#temp").hide();
+            $("#quiz").show();
         }
     </script>
 </html>

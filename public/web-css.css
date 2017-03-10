@@ -56,3 +56,8 @@ body{
 thead,tr{
     border : 3px solid grey;
 }
+#lose{
+    color:white;
+    text-align:center;
+    font-size:70px;
+}
