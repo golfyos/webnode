@@ -6,6 +6,12 @@ var router = express.Router();
 /* GET home page. */
 
 router.get('/',function(req, res){
+    console.log("get");
+    res.sendFile(path.resolve(__dirname + "/../public/Main.html"));
+});
+
+router.post('/',function(req, res){
+    console.log("post");
     res.sendFile(path.resolve(__dirname + "/../public/Main.html"));
 });
 

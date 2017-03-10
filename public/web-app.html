@@ -25,6 +25,16 @@
         </div>
         <div class="row">
             <div id="temp" class="col-xs-9"><p id="lose">You Lose! <br> Reset game!</p></div>
+            <div id="win" class="col-xs-9"><p id="lose">You Win ! <br> Bravo ~</p>
+                <form action="/" method="POST">
+                    <div style="text-align:center;">
+                        <input type="text" name="playerName" placeholder="Enter Your Name"> </input> 
+                    </div>
+                    <div style="text-align:center;">
+                        <button type="submit"> Submit</input> 
+                    </div>
+                </form>
+            </div>
             <div id="quiz" class="col-xs-9">
                 <div id="question">
                     <p id="qq"> </p>
@@ -78,6 +88,7 @@
     <script>
         $(document).ready(function() {
             $("#temp").hide();
+            $("#win").hide();
             newgame();
         }),
         $(".ans").click(function(event) {
@@ -94,6 +105,7 @@
                 //$('.ans').prop('disabled', true);
                 $("#temp").show();
                 $("#quiz").hide();
+                
             }
         }),
         $("#reset").click(function(){
@@ -129,10 +141,13 @@
 
         var num = ["one","two","three","four","five","six","seven","eight"];
         function getQuestion(){
+            if(size==8){
+                $("#win").show();
+                $("#quiz").hide();
+                return ;
+            }
             var current = gotRand[size];
-            
             var data = json["groupQuestion"][current];
-            
             $("#qq").text(data["question"]);
             positionTrue = Math.floor(Math.random()*4)+1;
             idTrue = "ans"+positionTrue;
@@ -159,6 +174,7 @@
             gotRand = [];
             size = 0;
             $("#temp").hide();
+            $("#win").hide();
             $("#quiz").show();
         }
     </script>

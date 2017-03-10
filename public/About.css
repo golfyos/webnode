@@ -3,3 +3,13 @@ body{
     background-repeat: repeat-x;
     background-image : url(http://fanaru.com/black/image/128600-black-black-town.jpg);
 }
+#header1,#header2,#header3{
+    font-size: 60px;
+    font-family: fantasy;
+    color: whitesmoke;
+}
+#whtQ,#h2p1,#h2p2,#h2p3,#hiw,#hiw2{
+    font-size: 20px;
+    font-family: Arial;
+    color :violet;
+}
