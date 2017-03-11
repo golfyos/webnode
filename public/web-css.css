@@ -1,6 +1,6 @@
 body{
     background-color : #ffffb3;
-    background-repeat: repeat-x;
+    background-attachment: fixed;
     background-image : url(http://fanaru.com/black/image/128600-black-black-town.jpg);
 }
 #header{
@@ -17,12 +17,12 @@ body{
     margin: 50px;
 }*/
 #question{
-    font-size: 40px;
+    font-size: 45px;
     font-family: Arial;
     padding-left : 50px;
     font-weight: bold; 
     color : lawngreen;
-    text-shadow: 3px 3px gray;
+    text-shadow: 3px 3px 10px gray;
     text-align: center;
 }
 #ans1,#ans2,#ans3,#ans4{
@@ -33,6 +33,7 @@ body{
     color : black;
     background-color: #999999;
     margin : 5%;
+    padding : 1%;
 }
 #tt{
     color : black;
@@ -60,4 +61,25 @@ thead,tr{
     color:white;
     text-align:center;
     font-size:70px;
+}
+#input_name{
+    width: 500px;
+    font-size: 30px;
+}
+#submit{
+    font-size: 20px;
+    font-family: Arial;
+    text-align: center;
+    font-weight: bold; 
+    color : black;
+    background-color: #ffff1a;
+    margin : 2%;
+    border-radius: 75px;
+    width: 150px;
+}
+#lose{
+    font-size: 90px;
+    font-family: Arial;
+    text-align: center;
+    font-weight: bold; 
 }

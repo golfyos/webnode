@@ -1,6 +1,6 @@
 body{
     background-color : #ffffb3;
-    background-repeat: repeat-x;
+    background-attachment: fixed;
     background-image : url(http://fanaru.com/black/image/128600-black-black-town.jpg);
 }
 #header{
@@ -10,16 +10,22 @@ body{
     color: whitesmoke;
     text-shadow: 3px 3px gray; 
 }
-#new,#about{
+#new,#about,#winner{
     font-size: 35px;
     font-family: Arial;
     text-align: center;
     font-weight: bold; 
     color : black;
     background-color: #ffff1a;
-    margin : 5%;
+    margin : 2%;
     border-radius: 75px;
+    width: 300px;
 }
 #btn{
-     text-align: center;
+    text-align: center;
 }
+
+
+
+
+

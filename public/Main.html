@@ -11,6 +11,7 @@ and open the template in the editor.
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Quiz Game</title>
@@ -20,14 +21,13 @@ and open the template in the editor.
         <div id="header">
             Quiz Game
         </div>
-        <div id="btn">
-            <div class="col-xs-3"></div>
-            <form action="play" method="POST">
-                <button class="col-xs-2" id="new" name="menu" value="newgame">New Game</button>
-                <button class="col-xs-2"  id="about" name="menu" value="about">About</button>           
+            <div id="btn" class="w3-center">
+            <form action="play" method="POST" >
+                <button id="new" name="menu" value="newgame">New Game</button><br>
+                <button id="about" name="menu" value="about">About</button>
             </form>
-            <form action="player" method="POST">
-                <button type="submit" class="col-xs-2" id=""> Winner </button>
+            <form action="player" method="POST">           
+                <button type="submit" id="winner"> Winner </button>              
             </form>
         </div>
     </body>
