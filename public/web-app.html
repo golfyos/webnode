@@ -95,7 +95,6 @@
     $(document).ready(function () {
         $("#temp").hide();
         $("#win").hide();
-        $("#amountHint").val("2");
         newgame();
     }),
         $(".ans").click(function (event) {
@@ -113,6 +112,7 @@
                     $("#" + num[i]).css("background-color", "red");
                 //$('.ans').prop('disabled', true);
                 $("#temp").show();
+                $("#hint").prop('disabled', true);
                 $("#quiz").hide();
 
             }
@@ -150,6 +150,7 @@
                 if (check)
                     gotRand.push(rand);
             }
+            $("#amountHint").text("2");
             getQuestion();
         })
     }
@@ -191,6 +192,7 @@
         $("#temp").hide();
         $("#win").hide();
         $("#quiz").show();
+        $("#hint").prop('disabled', false);
         reColorAnswer();
         numOfHint = 2;
         numClick = 0;
@@ -200,6 +202,7 @@
     function hideChoices() {
         if (numOfHint > 0 && numClick==1) {
             numOfHint--;
+            $("#amountHint").text(numOfHint);
             //hide1 = 1, hide2 = 1;
             while (true) {
                 if (hide1 == positionTrue) {
@@ -219,6 +222,7 @@
         } 
         else if(numOfHint > 0 && numClick == 2){
             numOfHint--;
+            $("#amountHint").text(numOfHint);
             for(var i=1;i<=4;i++){
                 if(i!= hide1 && i!=hide2 && i!=positionTrue){
                     hide3 = i;
