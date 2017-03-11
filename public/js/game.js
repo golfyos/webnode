@@ -1,102 +1,15 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link href="web-css.css" type="text/css" rel="stylesheet" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Quiz Game</title>
-</head>
-
-<body>
-    <div class="row">
-        <div class="col-xs-9">
-            <div class="col-xs-1"></div>
-            <button class="col-xs-2" type="button" id="hint">Hint &nbsp;(<p style="display:inline" id="amountHint"> </p>)</button>
-            <a href="/"><button  class="col-xs-2" type="button" id="main" >Menu</button></a>
-            <button class="col-xs-2" type="button" id="reset">Reset</button>
-            <div class="col-xs-8"></div>
-
-        </div>
-        <div class="col-xs-1"></div>
-        <div id="header" class="col-xs-2">Quiz Game</div>
-    </div>
-    <div class="row">
-        <div id="temp" class="col-xs-9">
-            <p id="lose">You Lose! <br> Reset game!</p>
-        </div>
-        <div id="win" class="col-xs-9">
-            <p id="lose">You Win !! <br> Bravo ~</p>
-            <form action="/" method="POST">
-                <div style="text-align:center;">
-                    <input type="text" name="playerName" placeholder="Enter Your Name" id="input_name"> </input>
-                </div>
-                <div style="text-align:center;">
-                    <button type="submit" id="submit"> Submit</input> 
-                    </div>
-                </form>
-            </div>
-            <div id="quiz" class="col-xs-9">
-                <div id="question">
-                    <p id="qq"> </p>
-                </div>     
-                <button  class="col-xs-4 ans" type="button"  id="ans1" >answer 1</button>
-                    <div class="col-xs-1"></div>
-                    <button class="col-xs-4 ans" type="button" id="ans2">answer 2</button>
-                    <button class="col-xs-4 ans" type="button" id="ans3">answer 3</button>
-                    <div class="col-xs-1"></div>
-                    <button class="col-xs-4 ans" type="button" id="ans4">answer 4</button>
-                </div>
-                <div class="col-xs-1"></div>
-                <div class="col-xs-2">
-                    <table id="tt" class="table table">
-                        <thead>
-                            <tr>
-                                <th style="font-weight: bold; font-size: 30px;  border: 2px solid;">Score</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td id="eight">1,000,000 $</td>
-                            </tr>
-                            <tr>
-                                <td id="seven">500,000 $</td>
-                            </tr>
-                            <tr>
-                                <td id="six">250,000 $</td>
-                            </tr>
-                            <tr>
-                                <td id="five">100,000 $</td>
-                            </tr>
-                            <tr>
-                                <td id="four">50,000 $</td>
-                            </tr>
-                            <tr>
-                                <td id="three">20,000 $</td>
-                            </tr>
-                            <tr>
-                                <td id="two">10,000 $</td>
-                            </tr>
-                            <tr>
-                                <td id="one">5,000 $</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-        </div>
-</body>
-
-<script>
+    var num = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
     var numClick = 0;
+    var gotRand = [];
+    var json, positionTrue, idTrue;
+    var size = 0;
+    var numOfHint = 2;
+    var hide1=1, hide2=1,hide3;
+
     $(document).ready(function () {
         $("#temp").hide();
         $("#win").hide();
         newgame();
-    }),
         $(".ans").click(function (event) {
             var id = event.target.id;
             if (id == idTrue) {
@@ -126,11 +39,8 @@
             numClick++;
             hideChoices();
         })
-
-    var gotRand = [];
-    var json, positionTrue, idTrue;
-    var size = 0;
-    var numOfHint = 2;
+    });
+    
 
     function newgame() {
         $.getJSON("../json/question.json", function (obj) {
@@ -155,7 +65,7 @@
         })
     }
 
-    var num = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
+    
     function getQuestion() {
         if (size == 8) {
             $("#win").show();
@@ -198,7 +108,7 @@
         numClick = 0;
     }
 
-    var hide1=1, hide2=1,hide3;
+    
     function hideChoices() {
         if (numOfHint > 0 && numClick==1) {
             numOfHint--;
@@ -235,12 +145,9 @@
             alert("You already use all Hints");
     }
 
+
     function reColorAnswer() {
         for (var i = 1; i <= 4; i++)
             //$("#ans" + i).css("background-color", "#ccccff");
             $("#ans"+i).show();
     }
-
-</script>
-
-</html>
