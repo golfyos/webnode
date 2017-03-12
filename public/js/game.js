@@ -9,6 +9,17 @@
     $(document).ready(function () {
         $("#temp").hide();
         $("#win").hide();
+        $.ajax({
+            type: "POST",
+            async: false,
+            url: '/playing',
+            success: function(obj) {
+                json = obj;
+            },
+            error: function(err) {
+                console.log(err);
+            }
+        });
         newgame();
         $(".ans").click(function (event) {
             var id = event.target.id;
@@ -43,8 +54,6 @@
     
 
     function newgame() {
-        $.getJSON("../json/question.json", function (obj) {
-            json = obj;
             var rand;
             var check = true;
             for (var i = 0; i < 8; i++) {
@@ -62,7 +71,6 @@
             }
             $("#amountHint").text("2");
             getQuestion();
-        })
     }
 
     
