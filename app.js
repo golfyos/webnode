@@ -46,7 +46,7 @@ app.post('/playing',function(req, res){
 });
 
 app.post('/play',function(req, res){
-    if(req.body.menu == "about"){
+    if(req.body.menu ==  "about"){
         res.sendFile(path.resolve(__dirname+"/public/About.html"));
     }
     else if(req.body.menu =="newgame"){   
